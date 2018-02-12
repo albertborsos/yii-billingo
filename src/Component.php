@@ -4,7 +4,7 @@ namespace albertborsos\billingo;
 
 use Billingo\API\Connector\HTTP\Request;
 
-class BillingoComponent extends \CComponent
+class Component extends \CComponent
 {
     /**
      * @var string
@@ -21,14 +21,21 @@ class BillingoComponent extends \CComponent
      */
     private $_api;
 
+    public function init()
+    {
+        $this->setApi(new Request(array(
+            'public_key' => $this->publicKey,
+            'private_key' => $this->privateKey,
+        )));
+    }
+
     public function getApi()
     {
-        if (empty($this->_api)) {
-            $this->_api = new Request(array(
-                'publicKey' => $this->publicKey,
-                'privateKey' => $this->privateKey,
-            ));
-        }
         return $this->_api;
+    }
+
+    private function setApi(Request $api)
+    {
+        $this->_api = $api;
     }
 }
