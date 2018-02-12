@@ -1,0 +1,23 @@
+{
+  "name": "albertborsos/yii-billingo",
+  "description": "Yii 1 component to connect your application with Billingo API",
+  "type": "extension",
+  "keywords": ["yii","yii1","extension"],
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Abert Borsos",
+      "email": "hello@borsosalbert.hu"
+    }
+  ],
+  "require": {
+    "php": ">=5.4.0",
+    "yiisoft/yii": "~1.1.19",
+    "voov/billingo-api-connector": "~1.0.6"
+  },
+  "autoload": {
+    "psr-4": {
+      "albertborsos\\billingo\\": "src/"
+    }
+  }
+}
