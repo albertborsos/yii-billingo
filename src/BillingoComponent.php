@@ -4,7 +4,7 @@ namespace albertborsos\billingo;
 
 use Billingo\API\Connector\HTTP\Request;
 
-class Component extends \CComponent
+class BillingoComponent extends \CComponent
 {
     /**
      * @var string
